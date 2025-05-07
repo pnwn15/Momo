@@ -65,7 +65,7 @@ function Profile() {
         <img className="w-10 h-10 rounded-full" src="/user.jpg" alt="Profile" />
       </div>
       {open && (
-        <div className="absolute right-5 mt-2 w-80 h-[600px] bg-white shadow-lg rounded-lg py-2 z-50">
+        <div className="absolute right-5 mt-2 w-80 h-auto overflow-y-auto  bg-white shadow-lg rounded-lg py-2 z-50">
           <div className="max-w-xl relative left-6 flex gap-5 top-6 flex-col ">
             <h1 className="text-lg font-semibold">User Profile</h1>
             <div>
@@ -107,7 +107,7 @@ function Profile() {
                 ))}
               </div>
             </div>
-            <div className="border w-68 h-36 rounded-xl bg-[#EEF3FF] border-transparent relative top-4 flex items-center justify-end px-4">
+            <div className="border w-68 h-36 rounded-xl bg-[#EEF3FF] border-transparent relative top-4 flex items-center justify-end ">
               <img
                 src="/moon.png"
                 alt="Image"
