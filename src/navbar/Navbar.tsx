@@ -14,6 +14,7 @@ import {
 import { Button, Layout, Menu, Drawer } from "antd";
 import { useNavigate } from "react-router-dom";
 import App from "../App";
+import Profile from "./Profile";
 
 const { Header, Sider, Content } = Layout;
 
@@ -115,7 +116,7 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         collapsed={collapsed}
         style={{
           background: "#FFFFFF",
-          height: "100vh", // ทำให้ Sider มีความสูงเต็มหน้าจอ
+          height: "130vh", // ทำให้ Sider มีความสูงเต็มหน้าจอ
           boxShadow: "2px 0px 8px rgba(0, 0, 0, 0.1)", // เพิ่มเงาด้านขวา
         }}
         className="hidden lg:block" // ซ่อนบนหน้าจอ sm, md และแสดงบน lg ขึ้นไป
@@ -128,8 +129,10 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             justifyContent: "center",
             padding: "0 16px",
           }}
+          className="gap-2"
         >
-          <img src="/logo.svg" alt="Logo" style={{ height: 22 }} />
+          <img src="/logos1.png" alt="Logo" style={{ height: 40 }} />
+          {!collapsed && <p className="text-xl font-bold tracking-wider ">Modernize</p>}
         </div>
         <Menu
           theme="light"
@@ -140,7 +143,15 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       </Sider>
 
       <Layout>
-        <Header style={{ padding: 0, background: "#FFFFFF" }}>
+        <Header
+          style={{
+            padding: 12,
+            background: "#FFFFFF",
+            display: "flex",
+            justifyContent: "space-between",
+            
+          }}
+        >
           <Button
             type="text"
             icon={<MenuOutlined />}
@@ -164,6 +175,9 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               display: window.innerWidth < 768 ? "block" : "none",
             }}
           />
+          <div className="flex items-center p-10 h-full">
+            <Profile />
+          </div>
         </Header>
         <Content
           style={{
