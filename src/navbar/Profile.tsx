@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { MailOutlined, UserOutlined } from "@ant-design/icons";
+import { MailOutlined, UserOutlined,InboxOutlined } from "@ant-design/icons";
 function Profile() {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -30,19 +30,19 @@ function Profile() {
   const menuProfile: string | number = [
     {
       id: 1,
-      icon: <UserOutlined style={{ fontSize: 24 }} />,
+      icon: <UserOutlined style={{ fontSize: 24,color: '#5D87FF' }} />,
       name: "My Profile",
       detail: "Account setting",
     },
     {
       id: 2,
-      icon: <UserOutlined style={{ fontSize: 24 }} />,
+      icon: <InboxOutlined style={{ fontSize: 24,color: '#5D87FF' }} />,
       name: "My Inbox",
       detail: "Message $ Emails",
     },
     {
       id: 3,
-      icon: <UserOutlined style={{ fontSize: 24 }} />,
+      icon: <UserOutlined style={{ fontSize: 24,color: '#5D87FF' }} />,
       name: "My Task",
       detail: "To do and daily tasks",
     },

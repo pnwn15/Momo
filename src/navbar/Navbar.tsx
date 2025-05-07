@@ -39,7 +39,17 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const menuItems = (navigate) => [
     {
       type: "group",
-      label: <span className="flex">Home</span>,
+      label: (
+        <span
+          className={`flex ${
+            collapsed
+              ? "justify-center text-2xl tracking-widest text-black"
+              : "justify-start text-black font-extrabold"
+          }`}
+        >
+          {collapsed ? "..." : "Home"}
+        </span>
+      ),
       children: [
         {
           key: "modern",
@@ -114,6 +124,7 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         trigger={null}
         collapsible
         collapsed={collapsed}
+        width={270}
         style={{
           background: "#FFFFFF",
           height: "130vh", // ทำให้ Sider มีความสูงเต็มหน้าจอ
@@ -123,8 +134,8 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       >
         <div
           style={{
-            height: 64,
             display: "flex",
+            height: 64,
             alignItems: "center",
             justifyContent: "center",
             padding: "0 16px",
@@ -132,13 +143,16 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           className="gap-2"
         >
           <img src="/logos1.png" alt="Logo" style={{ height: 40 }} />
-          {!collapsed && <p className="text-xl font-bold tracking-wider ">Modernize</p>}
+          {!collapsed && (
+            <p className="text-xl font-bold tracking-wider ">Modernize</p>
+          )}
         </div>
         <Menu
           theme="light"
           mode="inline"
           defaultSelectedKeys={["modern"]}
           items={menuItems(navigate)}
+          style={{ marginTop: 24, height: 64 }} // เพิ่มระยะห่างด้านบน
         />
       </Sider>
 
@@ -149,20 +163,30 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             background: "#FFFFFF",
             display: "flex",
             justifyContent: "space-between",
-            
           }}
         >
           <Button
             type="text"
-            icon={<MenuOutlined />}
             onClick={toggleMenu}
             style={{
               fontSize: "16px",
               width: 64,
-              height: 64,
+              height: 44,
               display: window.innerWidth >= 768 ? "block" : "none",
+              padding: 0,
             }}
-          />
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <MenuOutlined style={{ fontSize: 16 }} />
+            </div>
+          </Button>
 
           <Button
             type="text"
@@ -171,8 +195,9 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             style={{
               fontSize: "16px",
               width: 64,
-              height: 64,
+              height: 14,
               display: window.innerWidth < 768 ? "block" : "none",
+              padding: 0
             }}
           />
           <div className="flex items-center p-10 h-full">
