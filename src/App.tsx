@@ -1,16 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import { Routes, Route } from 'react-router-dom';  // ไม่ต้องใช้ BrowserRouter ซ้ำแล้ว
+import Modern from './Modern/Modern';
+import Navbar from './navbar/Navbar';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Modern />} />
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

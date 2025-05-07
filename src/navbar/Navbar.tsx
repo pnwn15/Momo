@@ -12,15 +12,17 @@ import {
   RiseOutlined,
   MutedOutlined,
   TableOutlined,
+  SoundOutlined,
 } from "@ant-design/icons";
 import { Button, Layout, Menu, Drawer, theme } from "antd";
-
+import { useNavigate } from "react-router-dom";
+import App from "../App";
 const { Header, Sider, Content } = Layout;
 
 const Navbar: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false); // ใช้ collapsed state
   const [drawerVisible, setDrawerVisible] = useState(false); // ใช้ state สำหรับการแสดง Drawer
-
+  const navigate = useNavigate();
   const toggleMenu = () => {
     setCollapsed(!collapsed); // toggle collapsed state
   };
@@ -33,54 +35,73 @@ const Navbar: React.FC = () => {
     setDrawerVisible(false); // เมื่อเลือกเมนูให้ปิด Drawer
   };
 
-  const menuItems = [
+  const menuItems = (navigate) => [
     {
       type: "group",
-      label: (
-        <span className="flex ">Home</span>
-      ),
+      label: <span className="flex">Home</span>,
       children: [
         {
-          key: "1",
+          key: "modern",
           icon: <UserOutlined />,
           label: <span className="menu-label-home">Modern</span>,
-          onClick: handleMenuClick,
+          onClick: () => {
+            navigate("/");
+            handleMenuClick();
+          },
         },
         {
-          key: "2",
+          key: "ecommerce",
           icon: <ShoppingCartOutlined />,
           label: <span className="menu-label-home">eCommerce</span>,
-          onClick: handleMenuClick,
+          onClick: () => {
+            navigate("/ecommerce");
+            handleMenuClick();
+          },
         },
         {
-          key: "3",
+          key: "nft",
           icon: <DollarOutlined />,
           label: <span className="menu-label-home">NFT</span>,
-          onClick: handleMenuClick,
+          onClick: () => {
+            navigate("/nft");
+            handleMenuClick();
+          },
         },
         {
-          key: "4",
+          key: "crypto",
           icon: <CodepenOutlined />,
           label: <span className="menu-label-home">Crypto</span>,
-          onClick: handleMenuClick,
+          onClick: () => {
+            navigate("/crypto");
+            handleMenuClick();
+          },
         },
         {
-          key: "5",
+          key: "general",
           icon: <RiseOutlined />,
           label: <span className="menu-label-home">General</span>,
-          onClick: handleMenuClick,
+          onClick: () => {
+            navigate("/general");
+            handleMenuClick();
+          },
         },
         {
-          key: "6",
-          icon: <MutedOutlined />,
+          key: "music",
+          icon: <SoundOutlined />,
           label: <span className="menu-label-home">Music</span>,
-          onClick: handleMenuClick,
+          onClick: () => {
+            navigate("/music");
+            handleMenuClick();
+          },
         },
         {
-          key: "7",
+          key: "frontend",
           icon: <TableOutlined />,
           label: <span className="menu-label-home">Frontend Page</span>,
-          onClick: handleMenuClick,
+          onClick: () => {
+            navigate("/frontend");
+            handleMenuClick();
+          },
         },
       ],
     },
@@ -114,8 +135,8 @@ const Navbar: React.FC = () => {
         <Menu
           theme="light"
           mode="inline"
-          defaultSelectedKeys={["1"]}
-          items={menuItems}
+          defaultSelectedKeys={["modern"]}
+          items={menuItems(navigate)}
         />
       </Sider>
 
@@ -154,7 +175,7 @@ const Navbar: React.FC = () => {
             minHeight: "100vh",
           }}
         >
-          Content
+          <App />
         </Content>
       </Layout>
 
@@ -163,14 +184,14 @@ const Navbar: React.FC = () => {
         title="Menu"
         placement="left"
         onClose={toggleDrawer}
-        visible={drawerVisible}
-        bodyStyle={{ padding: 0 }}
+        open={drawerVisible}
+        styles={{ body: { padding: 0 } }}
       >
         <Menu
           theme="light"
           mode="inline"
-          defaultSelectedKeys={["1"]}
-          items={menuItems}
+          defaultSelectedKeys={["modern"]}
+          items={menuItems(navigate)}
         />
       </Drawer>
     </Layout>
