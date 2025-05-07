@@ -201,7 +201,7 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               padding: 0,
             }}
           />
-          <div className="flex gap-5 items-center p-10 h-full">
+          <div className="flex gap-5 items-center  h-full">
             <Bell />
             <Profile />
           </div>
