@@ -16,6 +16,7 @@ import { useNavigate } from "react-router-dom";
 import App from "../App";
 import Profile from "./Profile";
 import Bell from "./Bell";
+import Cart from "./Cart";
 
 const { Header, Sider, Content } = Layout;
 
@@ -202,6 +203,7 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             }}
           />
           <div className="flex gap-5 items-center  h-full">
+            <Cart />
             <Bell />
             <Profile />
           </div>
