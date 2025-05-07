@@ -2,7 +2,7 @@ import React from 'react'
 
 function Modern() {
   return (
-    <div>Hello</div>
+    <div className=''>Hello</div>
   )
 }
 

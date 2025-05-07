@@ -2,27 +2,27 @@ import React, { useState } from "react";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
-  UploadOutlined,
   UserOutlined,
-  VideoCameraOutlined,
-  MenuOutlined,
-  DollarOutlined,
   ShoppingCartOutlined,
+  DollarOutlined,
   CodepenOutlined,
   RiseOutlined,
-  MutedOutlined,
-  TableOutlined,
   SoundOutlined,
+  TableOutlined,
+  MenuOutlined,
 } from "@ant-design/icons";
-import { Button, Layout, Menu, Drawer, theme } from "antd";
+import { Button, Layout, Menu, Drawer } from "antd";
 import { useNavigate } from "react-router-dom";
 import App from "../App";
+
 const { Header, Sider, Content } = Layout;
 
-const Navbar: React.FC = () => {
-  const [collapsed, setCollapsed] = useState(false); // ใช้ collapsed state
-  const [drawerVisible, setDrawerVisible] = useState(false); // ใช้ state สำหรับการแสดง Drawer
+const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  // ใช้ props.children
+  const [collapsed, setCollapsed] = useState(false);
+  const [drawerVisible, setDrawerVisible] = useState(false);
   const navigate = useNavigate();
+
   const toggleMenu = () => {
     setCollapsed(!collapsed); // toggle collapsed state
   };
@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
           icon: <UserOutlined />,
           label: <span className="menu-label-home">Modern</span>,
           onClick: () => {
-            navigate("/");
+            navigate("/modern");
             handleMenuClick();
           },
         },
@@ -109,12 +109,15 @@ const Navbar: React.FC = () => {
 
   return (
     <Layout>
-      {/* Sidebar สำหรับ Desktop */}
       <Sider
         trigger={null}
         collapsible
         collapsed={collapsed}
-        style={{ background: "#ffffff" }}
+        style={{
+          background: "#FFFFFF",
+          height: "100vh", // ทำให้ Sider มีความสูงเต็มหน้าจอ
+          boxShadow: "2px 0px 8px rgba(0, 0, 0, 0.1)", // เพิ่มเงาด้านขวา
+        }}
         className="hidden lg:block" // ซ่อนบนหน้าจอ sm, md และแสดงบน lg ขึ้นไป
       >
         <div
@@ -126,11 +129,7 @@ const Navbar: React.FC = () => {
             padding: "0 16px",
           }}
         >
-          <img
-            src="/logo.svg" // เปลี่ยน path เป็นโลโก้ของคุณ
-            alt="Logo"
-            style={{ height: 22 }}
-          />
+          <img src="/logo.svg" alt="Logo" style={{ height: 22 }} />
         </div>
         <Menu
           theme="light"
@@ -142,20 +141,18 @@ const Navbar: React.FC = () => {
 
       <Layout>
         <Header style={{ padding: 0, background: "#FFFFFF" }}>
-          {/* ปุ่ม Toggle สำหรับ Desktop */}
           <Button
             type="text"
-            icon={collapsed ? <MenuOutlined /> : <MenuOutlined />}
+            icon={<MenuOutlined />}
             onClick={toggleMenu}
             style={{
               fontSize: "16px",
               width: 64,
               height: 64,
-              display: window.innerWidth >= 768 ? "block" : "none", // แสดงในหน้าจอที่ขนาด > 768px
+              display: window.innerWidth >= 768 ? "block" : "none",
             }}
           />
 
-          {/* ปุ่ม Toggle สำหรับ Mobile */}
           <Button
             type="text"
             icon={<MenuOutlined />}
@@ -164,22 +161,20 @@ const Navbar: React.FC = () => {
               fontSize: "16px",
               width: 64,
               height: 64,
-              display: window.innerWidth < 768 ? "block" : "none", // แสดงในหน้าจอที่ขนาด < 768px
+              display: window.innerWidth < 768 ? "block" : "none",
             }}
           />
         </Header>
         <Content
           style={{
-            margin: "24px 16px",
             padding: 24,
             minHeight: "100vh",
+            backgroundColor: "#FFFFFF",
           }}
         >
-          <App />
+          {children}
         </Content>
       </Layout>
-
-      {/* Drawer สำหรับ Mobile */}
       <Drawer
         title="Menu"
         placement="left"
