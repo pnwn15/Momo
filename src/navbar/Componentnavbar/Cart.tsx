@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ShoppingCartOutlined } from "@ant-design/icons";
-import Buttons from "../Components/Buttons";
+import Buttons from "../../Components/Buttons";
 
 interface CartItem {
   id: number;

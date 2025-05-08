@@ -14,11 +14,11 @@ import {
 import { Button, Layout, Menu, Drawer } from "antd";
 import { useNavigate } from "react-router-dom";
 import App from "../App";
-import Profile from "./Profile";
-import Bell from "./Bell";
-import Cart from "./Cart";
-import Langue from "./Langue";
-import Darkmode from "./Darkmode";
+import Profile from "./Componentnavbar/Profile";
+import Bell from "./Componentnavbar/Bell";
+import Cart from "./Componentnavbar/Cart";
+import Langue from "./Componentnavbar/Langue";
+import Darkmode from "./Componentnavbar/Darkmode";
 
 const { Header, Sider, Content } = Layout;
 
@@ -131,11 +131,11 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         width={270}
         style={{
           background: "#FFFFFF",
-          height: "130vh", // ทำให้ Sider มีความสูงเต็มหน้าจอ
+          height: "auto", // ทำให้ Sider มีความสูงเต็มหน้าจอ
           boxShadow: "2px 0px 8px rgba(0, 0, 0, 0.1)", // เพิ่มเงาด้านขวา
-          overflow: 'auto'
+          overflow: 'auto',  
         }}
-        className="hidden lg:block" // ซ่อนบนหน้าจอ sm, md และแสดงบน lg ขึ้นไป
+        className="hidden fixed lg:block" // ซ่อนบนหน้าจอ sm, md และแสดงบน lg ขึ้นไป
       >
         <div
           style={{

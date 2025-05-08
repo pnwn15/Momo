@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import Button from "../Components/Buttons";
+import Button from "../../Components/Buttons";
 import {
   MailOutlined,
   UserOutlined,

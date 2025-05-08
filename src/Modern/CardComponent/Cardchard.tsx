@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TEChart } from "tw-elements-react";
 import { AppstoreOutlined } from "@ant-design/icons";
-import Buttons from "../Components/Buttons";
+import Buttons from "../../Components/Buttons";
 function Cardchard() {
   const [selectedRange, setSelectedRange] = useState("Monthly");
 

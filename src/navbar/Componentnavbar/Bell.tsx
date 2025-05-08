@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BellOutlined } from "@ant-design/icons";
-import Buttons from "../Components/Buttons";
+import Buttons from "../../Components/Buttons";
 
 type NotificationItem = {
     image: string;
