@@ -17,6 +17,8 @@ import App from "../App";
 import Profile from "./Profile";
 import Bell from "./Bell";
 import Cart from "./Cart";
+import Langue from "./Langue";
+import Darkmode from "./Darkmode";
 
 const { Header, Sider, Content } = Layout;
 
@@ -131,6 +133,7 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           background: "#FFFFFF",
           height: "130vh", // ทำให้ Sider มีความสูงเต็มหน้าจอ
           boxShadow: "2px 0px 8px rgba(0, 0, 0, 0.1)", // เพิ่มเงาด้านขวา
+          overflow: 'auto'
         }}
         className="hidden lg:block" // ซ่อนบนหน้าจอ sm, md และแสดงบน lg ขึ้นไป
       >
@@ -202,7 +205,9 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               padding: 0,
             }}
           />
-          <div className="flex gap-5 items-center  h-full">
+          <div className="flex gap-6 my-auto items-center  h-full">
+            <Darkmode />
+            <Langue />
             <Cart />
             <Bell />
             <Profile />
@@ -213,6 +218,7 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             padding: 50,
             minHeight: "100vh",
             backgroundColor: "#FFFFFF",
+            justifyContent: 'center',
           }}
         >
           {children}
