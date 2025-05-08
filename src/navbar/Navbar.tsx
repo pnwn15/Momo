@@ -214,12 +214,8 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           </div>
         </Header>
         <Content
-          style={{
-            padding: 50,
-            minHeight: "100vh",
-            backgroundColor: "#FFFFFF",
-            justifyContent: 'center',
-          }}
+          className="bg-white min-h-auto p-3 md:p-8 flex justify-center"
+          
         >
           {children}
         </Content>
