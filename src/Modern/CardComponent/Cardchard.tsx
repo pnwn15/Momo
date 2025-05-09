@@ -1,8 +1,21 @@
 import React, { useState } from "react";
 import { TEChart } from "tw-elements-react";
 import { AppstoreOutlined } from "@ant-design/icons";
-import Buttons from "../../Components/Buttons";
 import Cartchard1 from "./Cartchard1";
+
+interface ChartData {
+  labels: string[];
+  datasets: {
+    label: string;
+    data: number[];
+    barThickness: number;
+    borderRadius: number;
+  }[];
+}
+interface EarningsItem {
+  label: string;
+  amount: string;
+}
 function Cardchard() {
   const [selectedRange, setSelectedRange] = useState("Monthly");
 

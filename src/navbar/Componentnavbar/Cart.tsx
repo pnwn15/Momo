@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import Buttons from "../../Components/Buttons";
 
@@ -41,15 +41,6 @@ function Cart() {
   const [isOpen, setIsOpen] = useState(false);
   const [cartItems, setCartItems] = useState<CartItem[]>(mockCart);
   const [count, setCount] = useState(0);
-  const updateQuantity = (id: number, change: number): void => {
-    setCartItems((prev) =>
-      prev.map((item) =>
-        item.id === id
-          ? { ...item, quantity: Math.max(1, item.quantity + change) }
-          : item
-      )
-    );
-  };
 
   const subTotal: number = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,

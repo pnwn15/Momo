@@ -15,7 +15,6 @@ type LanguageOption = {
   ];
 function Langue() {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleDropdown = () => setIsOpen(!isOpen);
 
   const handleSelect = (lang: LanguageOption) => {

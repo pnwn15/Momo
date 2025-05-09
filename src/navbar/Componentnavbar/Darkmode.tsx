@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState, useEffect } from 'react'
 import { MoonOutlined } from '@ant-design/icons';
 function Darkmode() {

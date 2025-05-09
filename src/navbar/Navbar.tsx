@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
   UserOutlined,
   ShoppingCartOutlined,
   DollarOutlined,
