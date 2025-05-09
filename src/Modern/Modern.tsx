@@ -18,16 +18,16 @@ function Modern() {
     margin: 0,
   }}
 >
-  <Box sx={{ width: '100%', py: 6 }}>
+  <Box sx={{ width: '100%', py: 1 }}>
     <Cardmain />
     <Grid container spacing={3} sx={{ mt: 3, justifyContent: "center" }}>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} md={6} >
         <Cardchard />
       </Grid>
-      <Grid item xs={12} md={12}>
+      <Grid item xs={12} md={6}>
         <Cardchard2 />
       </Grid>
-      <Grid item xs={12} md={12}>
+      <Grid item xs={12} md={6} lg={6} xl={6}>
         <Cardchard3 />
       </Grid>
     </Grid>

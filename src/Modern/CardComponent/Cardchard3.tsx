@@ -61,7 +61,7 @@ function Cardchard3() {
   ];
   return (
     <div className="flex md:flex-row flex-col gap-6 w-full flex-wrap justify-center">
-      <div className="p-6 bg-white rounded-lg shadow-lg md:w-[368px] w-full h-auto  mx-auto">
+      <div className="p-6 bg-white rounded-lg shadow-lg xl:w-[368px] md:w-full w-full h-auto  mx-auto">
         <div className="flex">
           <div className="text-start mb-4">
             <h2 className="text-xl font-medium text-gray-800">Weekly Stats</h2>

@@ -69,6 +69,7 @@ function Cardmain() {
           width: "100%",
           justifyContent: { xs: "flex-start", lg: "center" },
           px: 2, // เพิ่ม padding ซ้ายขวาเล็กน้อยบนมือถือ
+          py: 2
         }}
       >
         {user.map((item, index) => (
