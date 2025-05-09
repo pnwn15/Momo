@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import { TEChart } from "tw-elements-react";
-import { AppstoreOutlined, ArrowUpOutlined } from "@ant-design/icons";
-import Buttons from "../../Components/Buttons";
-function Cardchard2() {
+import { AppstoreOutlined, ArrowUpOutlined,MessageOutlined } from "@ant-design/icons";
+import Progress from "../../Components/Progress";
+
+interface ProgressCardProps {
+  title: string;
+  amount: string;
+  percentage: number;
+}
+function Cardchard2({ title, amount, percentage, }) {
   const avatars = ["/gg1.jpg", "/gg2.jpg", "/gg3.jpg", "/gg4.jpg"];
   const financeStats = [
     { label: "Salary", amount: "$36,358" },
@@ -55,8 +61,8 @@ function Cardchard2() {
   };
 
   return (
-    <div className="flex md:flex-row flex-col max-w-lg gap-6 w-full justify-center">
-      <div className="p-6 bg-white rounded-lg shadow-lg md:w-[368px] w-full h-auto  mx-auto">
+    <div className="flex md:flex-col lg:flex-row flex-wrap flex-col gap-6 w-full min-w-full justify-center">
+      <div className="p-6 bg-white rounded-lg shadow-lg md:w-[740px] xl:w-[368px] lg:w-full h-auto  mx-auto">
         <div className="flex justify-between">
           <div className="text-start mb-4">
             <h2 className="text-xl font-medium text-gray-800">
@@ -66,7 +72,7 @@ function Cardchard2() {
           </div>
         </div>
         <div className="flex-col flex">
-          <div className="md:w-[300px] w-full h-[300px]">
+          <div className="md:w-full xl:w-[300px]  w-full h-[300px]">
             <TEChart
               type="bar"
               data={chartData}
@@ -100,7 +106,7 @@ function Cardchard2() {
         {/* แถวแรก: การ์ด 1 และ การ์ด 2 */}
         <div className="md:flex-row flex flex-col gap-4  ">
           {/* Card 1 */}
-          <div className="bg-white rounded-lg shadow-md p-4 md:w-[172px] w-full h-[256px] flex flex-col justify-between">
+          <div className="bg-white rounded-lg shadow-md p-4 md:w-1/2 lg:w-1/2 xl:w-[172px] w-full h-[256px] flex flex-col justify-between">
             <div className="p-4 flex flex-col gap-3">
               <h3 className="text-md font-semibold text-gray-800">Customers</h3>
               <p className="text-gray-600 text-xl mt-2">36,358</p>
@@ -137,7 +143,7 @@ function Cardchard2() {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-white rounded-lg shadow-md p-4 md:w-[172px] w-full h-[256px] flex flex-col justify-between">
+          <div className="bg-white rounded-lg shadow-md p-4 md:w-1/2 lg:w-[172px] w-full h-[256px] flex flex-col justify-between">
             <div className="p-4 flex flex-col gap-3">
               <h3 className="text-md font-semibold text-gray-800">Projects</h3>
               <p className="text-gray-600 text-xl mt-2">78,298</p>
@@ -196,6 +202,7 @@ function Cardchard2() {
               <p className="text-gray-600">22 March, 2024</p>
             </div>
           </div>
+          <div className="flex justify-center items-center">
           <div className="relative w-60 h-16 ">
             {avatars.map((src, index) => (
               <img
@@ -209,6 +216,31 @@ function Cardchard2() {
                 }}
               />
             ))}
+          </div>
+          <div className="flex items-center justify-center border p-2 w-10 h-10 rounded-md bg-blue-50 border-transparent ">
+          <MessageOutlined />
+          </div>
+          </div>
+        </div>
+      </div>
+      <div className=" bg-[#5D87FF] rounded-lg shadow-lg md:w-[740px] lg:w-[368px] w-full h-auto  mx-auto">
+        <div className="flex p-6 justify-between">
+          <div className="text-start mb-4">
+            <h2 className="text-xl font-medium text-white">
+              Best Selling Products
+            </h2>
+            <span className="text-md font-normal text-white">
+              Overview 2024
+            </span>
+          </div>
+        </div>
+        <div className="pt-10 p-2 flex w-full  flex-col ">
+          <div className="flex justify-center items-start gap-4">
+            <img src="/pig.png" alt="" />
+          </div>
+          <div className="bg-white rounded-md h-full">
+            <Progress title="MaterialPro" amount="$23,568" percentage={55} />
+            <Progress title="Flexy Admin" amount="$23,568" percentage={20} />
           </div>
         </div>
       </div>

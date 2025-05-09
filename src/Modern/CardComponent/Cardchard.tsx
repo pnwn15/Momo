@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { TEChart } from "tw-elements-react";
 import { AppstoreOutlined } from "@ant-design/icons";
 import Buttons from "../../Components/Buttons";
+import Cartchard1 from "./Cartchard1";
 function Cardchard() {
   const [selectedRange, setSelectedRange] = useState("Monthly");
 
@@ -60,7 +61,8 @@ function Cardchard() {
   };
 
   return (
-    <div className="p-6 bg-white rounded-lg shadow-lg w-full h-auto max-w-3xl mx-auto">
+    <div className="lg:flex-row md:flex-col flex py-3 flex-col overflow-auto gap-6">
+    <div className="p-6  bg-white rounded-lg shadow-lg w-full h-auto lg:max-w-3xl max-w-full mx-auto">
       <div className="flex justify-between">
         <div className="text-start mb-4">
           <h2 className="text-xl font-medium text-gray-800">Revenue Updates</h2>
@@ -121,6 +123,8 @@ function Cardchard() {
           </div>
         </div>
       </div>
+    </div>
+    <Cartchard1 />
     </div>
   );
 }

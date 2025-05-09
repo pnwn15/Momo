@@ -66,34 +66,38 @@ function Cardmain() {
           display: "flex",
           gap: 2,
           overflow: { xs: "auto", md: "auto", lg: "hidden" },
-          height: "200px",
-          justifyContent: 'center',
-        
+          width: "100%",
+          justifyContent: { xs: "flex-start", lg: "center" },
+          px: 2, // เพิ่ม padding ซ้ายขวาเล็กน้อยบนมือถือ
         }}
       >
         {user.map((item, index) => (
-          <Box key={index}>
-            <Card sx={{ minWidth: 180,  }}>
+          <Box key={index} sx={{ flexShrink: 0 }}>
+            <Card sx={{ minWidth: 180, maxWidth: 200 }}>
               <CardContent
                 sx={{
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "center",
-                  height: "100",
-                  padding: 5,
+                  height: 150,
+                  padding: 3,
                   ...(item.sx || {}),
                 }}
               >
                 <CardMedia sx={{ mb: 2 }}>
-                  <img src={item.image} alt="" />
+                  <img src={item.image} alt="" style={{ width: 60 }} />
                 </CardMedia>
                 <Typography sx={{ ...(item.sx1 || {}) }}>
                   {item.title}
                 </Typography>
                 <Typography
                   variant="body2"
-                  sx={{ fontSize: 20, fontWeight: 30, ...(item.sx1 || {}) }}
+                  sx={{
+                    fontSize: 20,
+                    fontWeight: 500,
+                    ...(item.sx1 || {}),
+                  }}
                 >
                   {item.description}
                 </Typography>

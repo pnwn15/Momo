@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/modern" element={<Modern />} />
+        <Route path="/" element={<Modern />} />
         <Route path="/ecommerce" element={<EcommerceDashboard />} />
       </Routes>
     </>
