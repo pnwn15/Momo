@@ -17,10 +17,10 @@ const LoadingScreen = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center h-screen ">
-      <div className="flex flex-col items-center space-y-6 w-72">
-        <img src="/alien.gif" alt="loading" className="w-36 h-36" />
-        <div className="w-1/2">
+    <div className="flex items-center justify-center h-screen w-screen ">
+      <div className="flex flex-col gap-4 items-center space-y-6 w-72">
+        <img src="/be.gif" alt="loading" className="w-full h-full" />
+        <div className="w-full">
           <div className="bg-gray-700 h-3 rounded">
             <div
               className={`h-3 rounded transition-all duration-50 ${
