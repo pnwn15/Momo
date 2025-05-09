@@ -8,7 +8,7 @@ interface ProgressCardProps {
   amount: string;
   percentage: number;
 }
-function Cardchard2({ title, amount, percentage, }) {
+function Cardchard2({ title, amount, percentage }:ProgressCardProps) {
   const avatars = ["/gg1.jpg", "/gg2.jpg", "/gg3.jpg", "/gg4.jpg"];
   const financeStats = [
     { label: "Salary", amount: "$36,358" },

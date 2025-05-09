@@ -6,7 +6,7 @@ interface ProgressProps {
   percentage: number;
 }
 
-const Progress: React.FC<ProgressProps> = ({ title, amount, percentage, color }) => {
+const Progress: React.FC<ProgressProps> = ({ title, amount, percentage  }) => {
   return (
     <div className="p-8 ">
       <div className="flex justify-between items-center">
@@ -14,7 +14,7 @@ const Progress: React.FC<ProgressProps> = ({ title, amount, percentage, color })
           <h4 className="text-gray-900 font-semibold">{title}</h4>
           <p className="text-gray-500 text-sm">{amount}</p>
         </div>
-        <span className={`bg-${color}-100 text-${color}-600 text-sm font-semibold px-2 py-1 rounded-md`}>
+        <span className={`text-sm font-semibold px-2 py-1 rounded-md`}>
           {percentage}%
         </span>
       </div>

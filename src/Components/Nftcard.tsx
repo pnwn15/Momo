@@ -5,6 +5,7 @@ type NFTCardProps = {
     title: string;
     eth: number;
     timeLeft: string;
+    className?: string;
   };
 function Nftcard({ image, title, eth, timeLeft }: NFTCardProps) {
   return (
