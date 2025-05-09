@@ -1,13 +1,14 @@
-import React, { useState, Fragment } from "react";
+import { useState, Fragment } from "react";
 import { Container, Grid, Box } from "@mui/material";
 import { Listbox, Transition } from "@headlessui/react";
 import Nft from "./Nft";
 
 const options = [
-    { name: "USD", icon: "/english.svg" },
-    { name: "USD", icon: "/english.svg" },
-    { name: "USD", icon: "/english.svg" },
-  ];
+  { name: "USD", icon: "/usd.svg" }, // เปลี่ยนเป็นค่าอื่นเพื่อหลีกเลี่ยงการซ้ำ
+  { name: "THB", icon: "/thai.svg" }, // เพิ่มตัวเลือกให้หลากหลาย
+  { name: "EUR", icon: "/euro.svg" }, // เพิ่มตัวเลือกให้หลากหลาย
+];
+
 function Nftmain() {
   const [selectedRange, setSelectedRange] = useState("Monthly");
   const [selected, setSelected] = useState(options[0]);
@@ -15,26 +16,27 @@ function Nftmain() {
   const productData = [
     {
       img: "/user1.jpg",
-      name: ' 18,670.21	',
-      color: "Alan Walker Origins",
+      name: '18,670.21',
+      color: "Alan Walker Origins", // แก้ไขให้แสดงชื่อ Collection จริง
       category: "-20.38%",
       price: "$6.8k",
     },
     {
       img: "/gg1.jpg",
-      name: ' 15,880.20	',
-      color: "The StarSharks NFTs",
+      name: '15,880.20',
+      color: "The StarSharks NFTs", // แก้ไขให้แสดงชื่อ Collection จริง
       category: "+15.14%",
       price: "$6.8k",
     },
     {
       img: "/gg4.jpg",
-      name: ' 14,920.20	',
-      color: "Sacred Realm",
+      name: '14,920.20',
+      color: "Sacred Realm", // แก้ไขให้แสดงชื่อ Collection จริง
       category: "-10.25%",
       price: "$6.8k",
     },
   ];
+
   return (
     <Container maxWidth="xl">
       <Box my={4} display="flex" alignItems="center">
@@ -60,7 +62,7 @@ function Nftmain() {
               alignItems="center"
               className="mx-2  w-full"
             >
-              <div className="p-6 bg-white rounded-lg shadow-lg xl:w-[800px] lg:w-full  w-full h-auto  mx-auto">
+              <div className="p-6 bg-white rounded-lg shadow-lg xl:w-[800px] lg:w-full w-full h-auto mx-auto">
                 <div className="flex justify-between">
                   <div className="text-start mb-4">
                     <h2 className="text-xl font-medium text-gray-800">
@@ -124,13 +126,13 @@ function Nftmain() {
                           Collection
                         </th>
                         <th scope="col" className="px-6 py-3">
-                        Volume
+                          Volume
                         </th>
                         <th scope="col" className="px-6 py-3">
-                        24h
+                          24h
                         </th>
                         <th scope="col" className="px-6 py-3">
-                        Floor Price
+                          Floor Price
                         </th>
                       </tr>
                     </thead>
@@ -150,7 +152,7 @@ function Nftmain() {
                               src={product.img}
                               alt=""
                             />
-                            Sunil Joshi
+                            {product.color} {/* แสดงชื่อ Collection */}
                           </td>
                           <td
                             scope="row"
