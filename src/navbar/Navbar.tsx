@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
   UserOutlined,
   ShoppingCartOutlined,
   DollarOutlined,
@@ -14,8 +12,11 @@ import {
 import { Button, Layout, Menu, Drawer } from "antd";
 import { useNavigate } from "react-router-dom";
 import App from "../App";
-import Profile from "./Profile";
-import Bell from "./Bell";
+import Profile from "./Componentnavbar/Profile";
+import Bell from "./Componentnavbar/Bell";
+import Cart from "./Componentnavbar/Cart";
+import Langue from "./Componentnavbar/Langue";
+import Darkmode from "./Componentnavbar/Darkmode";
 
 const { Header, Sider, Content } = Layout;
 
@@ -57,7 +58,7 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           icon: <UserOutlined />,
           label: <span className="menu-label-home">Modern</span>,
           onClick: () => {
-            navigate("/modern");
+            navigate("/");
             handleMenuClick();
           },
         },
@@ -120,7 +121,7 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   ];
 
   return (
-    <Layout>
+    <Layout style={{ height: "100vh" }}>
       <Sider
         trigger={null}
         collapsible
@@ -128,10 +129,10 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         width={270}
         style={{
           background: "#FFFFFF",
-          height: "130vh", // ทำให้ Sider มีความสูงเต็มหน้าจอ
-          boxShadow: "2px 0px 8px rgba(0, 0, 0, 0.1)", // เพิ่มเงาด้านขวา
+          boxShadow: "2px 0px 8px rgba(0, 0, 0, 0.1)",
+          overflow: "auto", // เพิ่ม scroll ถ้าเมนูยาวเกิน
         }}
-        className="hidden lg:block" // ซ่อนบนหน้าจอ sm, md และแสดงบน lg ขึ้นไป
+        className="hidden lg:block"
       >
         <div
           style={{
@@ -145,7 +146,7 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         >
           <img src="/logos1.png" alt="Logo" style={{ height: 40 }} />
           {!collapsed && (
-            <p className="text-xl font-bold tracking-wider ">Modernize</p>
+            <p className="text-xl font-bold tracking-wider">Modernize</p>
           )}
         </div>
         <Menu
@@ -153,11 +154,19 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           mode="inline"
           defaultSelectedKeys={["modern"]}
           items={menuItems(navigate)}
-          style={{ marginTop: 24, height: 64 }} // เพิ่มระยะห่างด้านบน
+          style={{ marginTop: 24 }}
         />
       </Sider>
 
-      <Layout>
+      {/* Layout ด้านขวา */}
+      <Layout
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          flex: 1,
+          overflow: "hidden",
+        }}
+      >
         <Header
           style={{
             padding: 12,
@@ -201,21 +210,26 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               padding: 0,
             }}
           />
-          <div className="flex gap-5 items-center  h-full">
+          <div className="flex gap-6 my-auto items-center h-full">
+            <Darkmode />
+            <Langue />
+            <Cart />
             <Bell />
             <Profile />
           </div>
         </Header>
+
         <Content
+          className="bg-white p-3 md:p-8 flex justify-center"
           style={{
-            padding: 50,
-            minHeight: "100vh",
-            backgroundColor: "#FFFFFF",
+            flex: 1,
+            overflow: "auto", // ✅ สำคัญ: ทำให้เลื่อน scroll ได้
           }}
         >
           {children}
         </Content>
       </Layout>
+
       <Drawer
         title="Menu"
         placement="left"

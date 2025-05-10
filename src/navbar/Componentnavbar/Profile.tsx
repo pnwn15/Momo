@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
-import Button from "../Components/Buttons";
+import { useState, useRef, useEffect } from "react";
+import Button from "../../Components/Buttons";
 import {
   MailOutlined,
   UserOutlined,
@@ -65,7 +65,7 @@ function Profile() {
         <img className="w-10 h-10 rounded-full" src="/user.jpg" alt="Profile" />
       </div>
       {open && (
-        <div className="absolute right-5 mt-2 w-80  max-h-[500px] overflow-y-auto overflow-x-hidden bg-white shadow-lg rounded-lg py-2 z-50">
+        <div className="absolute right-5 mt-2 w-80  h-[650px]  bg-white shadow-lg rounded-lg py-2 z-50">
           <div className="max-w-xl relative left-6 flex gap-5 top-6 flex-col ">
             <h1 className="text-lg font-semibold">User Profile</h1>
             <div>

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { BellOutlined } from "@ant-design/icons";
-import Buttons from "../Components/Buttons";
+import Buttons from "../../Components/Buttons";
 
 type NotificationItem = {
     image: string;
@@ -17,22 +17,22 @@ function Bell() {
       description: "Congratulate him",
     },
     {
-        image: "/user1.jpg",
+        image: "/user2.jpg",
       title: "New message",
       description: "Salma sent you new message",
     },
     {
-        image: "/user1.jpg",
+        image: "/user3.jpg",
       title: "Bianca sent payment",
       description: "Check your earnings",
     },
     {
-        image: "/user1.jpg",
+        image: "/user4.jpg",
       title: "Jolly completed tasks",
       description: "Assign her new tasks",
     },
     {
-        image: "/user1.jpg",
+        image: "/user5.jpg",
       title: "John received payment",
       description: "$230 deducted from account",
     },
@@ -43,7 +43,7 @@ function Bell() {
   return (
     <div>
       <BellOutlined style={{ fontSize: 20 }} onClick={toggleDropdown} />
-
+    
       {/* แสดงกล่องข้อความเมื่อคลิก */}
       {isOpen && (
         <div className="absolute mt-2 right-18 bg-white shadow-lg  rounded-lg w-76 p-4">
