@@ -17,10 +17,7 @@
     "@mui/material": "^7.1.0",
     "@tailwindcss/vite": "^4.1.5",
     "antd": "^5.24.9",
-<<<<<<< HEAD
-=======
     "apexcharts": "^3.46.0",
->>>>>>> b9195e457a1a772dda21784955507894b6fc6fb3
     "chart.js": "^4.4.9",
     "classnames": "^2.5.1",
     "lucide-react": "^0.508.0",
