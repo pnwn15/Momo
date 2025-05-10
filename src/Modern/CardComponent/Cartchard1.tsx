@@ -1,10 +1,9 @@
-import React from "react";
 import { TEChart } from "tw-elements-react";
 import { ArrowUpOutlined } from "@ant-design/icons";
 function Cartchard1() {
   return (
-    <div className="flex flex-col gap-3 w-full ">
-      <div className="flex items-center justify-between h-[200px] bg-white p-8 rounded-lg shadow-md md:min-w-full lg:w-[368px] w-full ">
+    <div className="flex flex-col gap-3  ">
+      <div className="flex items-center justify-between h-[200px] bg-white p-8 rounded-lg shadow-md  lg:w-[368px] w-full ">
         <div className="text-left flex flex-col gap-4">
           <h3 className="text-lg font-normal text-gray-800">Yearly Breakup</h3>
           <p className="text-xl text-black">$36,358</p>
@@ -48,7 +47,7 @@ function Cartchard1() {
         </div>
       </div>
 
-      <div className="flex items-center justify-center h-[200px] bg-white p-4 rounded-lg shadow-md w-full">
+      <div className="flex items-center justify-between h-[200px] bg-white p-8 rounded-lg shadow-md  lg:w-[368px] w-full">
         <div className="text-left flex flex-col gap-4 w-full">
           <h3 className="text-lg font-normal text-gray-800">
             Monthly Earnings

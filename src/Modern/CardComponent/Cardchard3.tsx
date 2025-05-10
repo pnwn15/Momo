@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import { TEChart } from "tw-elements-react";
+import { useState } from "react";
 import { AppstoreOutlined } from "@ant-design/icons";
 import { AreaChart, Area, ResponsiveContainer } from "recharts";
-import Cardchard2 from "./Cardchard2";
+
 function Cardchard3() {
   const [selectedRange, setSelectedRange] = useState("Monthly");
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -109,7 +108,7 @@ function Cardchard3() {
           </div>
         </div>
       </div>
-      <div className="p-6 bg-white rounded-lg shadow-lg md:w-[750px] w-full h-auto  mx-auto">
+      <div className="p-6 bg-white rounded-lg shadow-lg md:w-full xl:w-[750px] lg:w-[750px] w-full h-auto  mx-auto">
         <div className="flex justify-between">
           <div className="text-start mb-4">
             <h2 className="text-xl font-medium text-gray-800">

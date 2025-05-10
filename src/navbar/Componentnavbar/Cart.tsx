@@ -37,16 +37,28 @@ const mockCart: CartItem[] = [
     image: "/cart3.jpg",
   },
 ];
+
 function Cart() {
   const [isOpen, setIsOpen] = useState(false);
   const [cartItems, setCartItems] = useState<CartItem[]>(mockCart);
-  const [count, setCount] = useState(0);
 
   const subTotal: number = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
-  const total: number = subTotal + 4300; // ตัวอย่างค่าขนส่งหรือค่าธรรมเนียม
+  const total: number = subTotal + 4300; // ค่าขนส่งหรือค่าธรรมเนียม
+
+  const increaseQuantity = (id: number) => {
+    setCartItems(cartItems.map(item => 
+      item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+    ));
+  };
+
+  const decreaseQuantity = (id: number) => {
+    setCartItems(cartItems.map(item => 
+      item.id === id && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item
+    ));
+  };
 
   return (
     <>
@@ -62,10 +74,10 @@ function Cart() {
       >
         <div className="p-4 flex justify-between items-center ">
           <div className="flex justify-between max-w-md items-center w-full">
-            <p className="text-base font-medium ml-4">Shoping Cart</p>
+            <p className="text-base font-medium ml-4">Shopping Cart</p>
             <Buttons
-              label="5 news"
-              className="bg-[#4F73D9] text-white h-6 px-3  my-auto text-sm flex items-center justify-center rounded-2xl"
+              label="5 new"
+              className="bg-[#4F73D9] text-white h-6 px-3 my-auto text-sm flex items-center justify-center rounded-2xl"
             />
           </div>
           <button
@@ -92,16 +104,16 @@ function Cart() {
                   </p>
 
                   <button
-                    onClick={() => setCount(count - 1)}
+                    onClick={() => decreaseQuantity(item.id)}
                     className="bg-[#13DEB9] text-white text-sm font-bold w-8 h-8 rounded flex items-center justify-center"
                   >
                     -
                   </button>
 
-                  <span className="w-6 text-center">{count}</span>
+                  <span className="w-6 text-center">{item.quantity}</span>
 
                   <button
-                    onClick={() => setCount(count + 1)}
+                    onClick={() => increaseQuantity(item.id)}
                     className="bg-[#13DEB9] text-white text-sm font-bold w-8 h-8 rounded flex items-center justify-center"
                   >
                     +
@@ -110,7 +122,7 @@ function Cart() {
               </div>
             </div>
           ))}
-          <div className=" pt-4 text-sm flex flex-col gap-7 text-gray-700 font-medium">
+          <div className="pt-4 text-sm flex flex-col gap-7 text-gray-700 font-medium">
             <div className="flex justify-between mb-2">
               <span>Sub Total</span>
               <span>${subTotal}</span>

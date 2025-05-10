@@ -6,6 +6,7 @@ import {
   InboxOutlined,
   WindowsOutlined,
 } from "@ant-design/icons";
+
 function Profile() {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -24,7 +25,7 @@ function Profile() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const profile: any = [
+  const profile = [
     {
       image: "/user.jpg",
       name: "Mathew Anderson",
@@ -33,7 +34,8 @@ function Profile() {
     },
   ];
 
-  const menuProfile: string | number = [
+  // แก้ไขประเภทของ menuProfile
+  const menuProfile: { id: number; icon: React.ReactNode; name: string; detail: string }[] = [
     {
       id: 1,
       icon: <UserOutlined style={{ fontSize: 24, color: "#5D87FF" }} />,
@@ -44,7 +46,7 @@ function Profile() {
       id: 2,
       icon: <InboxOutlined style={{ fontSize: 24, color: "#5D87FF" }} />,
       name: "My Inbox",
-      detail: "Message $ Emails",
+      detail: "Message & Emails",
     },
     {
       id: 3,
@@ -53,6 +55,7 @@ function Profile() {
       detail: "To do and daily tasks",
     },
   ];
+
   return (
     <div className="relative h-full" ref={dropdownRef}>
       <div
@@ -122,7 +125,7 @@ function Profile() {
               </div>
             </div>
             <div className="mt-5">
-            <Button label="Log Out" className=" w-68 bg-transparent text-[#4F73D9] border-[#4F73D9] border"/>
+              <Button label="Log Out" className="w-68 bg-transparent text-[#4F73D9] border-[#4F73D9] border"/>
             </div>
           </div>
         </div>

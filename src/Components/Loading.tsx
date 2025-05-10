@@ -19,7 +19,7 @@ const LoadingScreen = () => {
   return (
     <div className="flex items-center justify-center h-screen w-screen ">
       <div className="flex flex-col gap-4 items-center space-y-6 w-72">
-        <img src="/be.gif" alt="loading" className="w-full h-full" />
+        <img src="/logo.svg" alt="loading" className="w-full h-full" />
         <div className="w-full">
           <div className="bg-gray-700 h-3 rounded">
             <div
