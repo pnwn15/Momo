@@ -94,7 +94,6 @@ function Nft() {
           </div>
         </div>
       </div>
-
       <div className="border bg-white rounded-2xl shadow-xl xl:w-full lg:w-full  w-full h-[460px] ">
         <div className="flex flex-col gap-6">
           {/* Header */}
@@ -126,8 +125,6 @@ function Nft() {
           </div>
         </div>
       </div>
-
-      
     </div>
   );
 }
