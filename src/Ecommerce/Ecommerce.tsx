@@ -161,7 +161,7 @@ const DashboardCard = () => {
         </div>
 
         {/* กล่องที่สอง */}
-        <div className="flex flex-col bg-white w-full md:w-[166px] h-[250px] rounded-md shadow-xl p-4 items-center justify-center">
+        <div className="flex flex-col bg-white w-full  md:w-[166px] h-[250px] rounded-md shadow-xl p-4 items-center justify-center">
           <h3 className="text-lg font-bold text-black">$10,230</h3>
           <p className="text-gray-500 text-sm mb-2">Expense</p>
           <div className="w-[100px] h-[100px]">
