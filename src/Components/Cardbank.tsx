@@ -156,13 +156,10 @@ function Cardbank() {
             </div>
           </div>
           <div className="flex items-center  border-t-1 justify-between p-3 ">
-
             <div className="flex items-center gap-4 ">
-
               <div className="bg-gray-100 p-2 rounded-full">
               <span className="text-xl">🪙</span>
               </div>
-
               <div className="">
                 <p className="text-gray-800  font-semibold">
                   1.23 <span className="text-gray-900">ETH</span>
@@ -170,7 +167,6 @@ function Cardbank() {
                 <p className="text-gray-400 text-sm">$12,000</p>
               </div>
             </div>
-
             <div>
               <p className="text-red-400 font-semibold">-6.8%</p>
             </div>
