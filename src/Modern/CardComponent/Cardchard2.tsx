@@ -3,12 +3,8 @@ import { TEChart } from "tw-elements-react";
 import { AppstoreOutlined, ArrowUpOutlined,MessageOutlined } from "@ant-design/icons";
 import Progress from "../../Components/Progress";
 
-interface ProgressCardProps {
-  title: string;
-  amount: string;
-  percentage: number;
-}
-function Cardchard2({ title, amount, percentage }:ProgressCardProps) {
+
+function Cardchard2() {
   const avatars = ["/gg1.jpg", "/gg2.jpg", "/gg3.jpg", "/gg4.jpg"];
   const financeStats = [
     { label: "Salary", amount: "$36,358" },

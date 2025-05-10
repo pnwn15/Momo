@@ -4,7 +4,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Modern from "./Modern/Modern";
 import EcommerceDashboard from "./Ecommerce/Ecommerce";
 import Loading from "./Components/Loading";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Nftmain from "./NFT/Nftmain";

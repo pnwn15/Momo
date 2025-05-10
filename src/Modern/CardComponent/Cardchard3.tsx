@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import { TEChart } from "tw-elements-react";
+import { useState } from "react";
 import { AppstoreOutlined } from "@ant-design/icons";
 import { AreaChart, Area, ResponsiveContainer } from "recharts";
-import Cardchard2 from "./Cardchard2";
+
 function Cardchard3() {
   const [selectedRange, setSelectedRange] = useState("Monthly");
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {

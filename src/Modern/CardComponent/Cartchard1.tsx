@@ -1,4 +1,3 @@
-import React from "react";
 import { TEChart } from "tw-elements-react";
 import { ArrowUpOutlined } from "@ant-design/icons";
 function Cartchard1() {
