@@ -9,6 +9,7 @@ import {
   CategoryScale,
   LinearScale,
 } from "chart.js";
+import Ecommerce2 from "./Ecommerce2";
 
 ChartJS.register(
   ArcElement,
@@ -89,7 +90,7 @@ const DashboardCard = () => {
   };
 
   return (
-    <>
+    <div className="flex flex-col w-full gap-10">
       {/* กล่องหลักและกราฟวงกลม/แท่ง */}
       <div className="max-w-6xl flex-[3] flex flex-col md:flex-row flex-nowrap justify-start items-start gap-6">
         {/* การ์ดหลัก */}
@@ -175,11 +176,11 @@ const DashboardCard = () => {
           <div className="w-full h-[80px]">
             <Bar data={barData} options={barOptions} />
           </div>
-        </div>
+        </div>       
       </div>
-
-     
-    </>
+         
+    <Ecommerce2/>
+    </div>
   );
 };
 
