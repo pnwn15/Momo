@@ -1,4 +1,6 @@
 import Cardbank from "../Components/Cardbank";
+import History from "../Components/History";
+import Recent from "../Components/Recent";
 import Nft from "./Nft";
 
 function Nftmain() {
@@ -16,6 +18,12 @@ function Nftmain() {
           {/* Right Column */}
           <div className="w-full p-4">
             <div className="mx-2 w-full flex flex-col items-center"><Cardbank /></div>
+          </div>
+          <div className="w-full p-4">
+            <div className="mx-2 w-full flex flex-col items-center"><Recent /></div>
+          </div>
+          <div className="w-full p-4">
+            <div className="mx-2 w-full flex flex-col items-center"><History /></div>
           </div>
         </div>
       </div>
