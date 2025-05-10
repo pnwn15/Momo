@@ -108,7 +108,7 @@ function Cardchard3() {
           </div>
         </div>
       </div>
-      <div className="p-6 bg-white rounded-lg shadow-lg md:w-[750px] w-full h-auto  mx-auto">
+      <div className="p-6 bg-white rounded-lg shadow-lg md:w-full xl:w-[750px] lg:w-[750px] w-full h-auto  mx-auto">
         <div className="flex justify-between">
           <div className="text-start mb-4">
             <h2 className="text-xl font-medium text-gray-800">

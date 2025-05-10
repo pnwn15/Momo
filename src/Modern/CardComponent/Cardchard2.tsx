@@ -57,8 +57,8 @@ function Cardchard2() {
   };
 
   return (
-    <div className="flex md:flex-col lg:flex-row flex-wrap flex-col gap-6 w-full min-w-full justify-center">
-      <div className="p-6 bg-white rounded-lg shadow-lg md:w-[740px] xl:w-[368px] lg:w-full h-auto  mx-auto">
+    <div className="flex md:flex-col lg:flex-row flex-wrap flex-col gap-6 w-full min-w-full mx-6 justify-center">
+      <div className="p-6 bg-white rounded-lg shadow-lg md:w-full xl:w-[368px] lg:w-full h-auto  mx-auto">
         <div className="flex justify-between">
           <div className="text-start mb-4">
             <h2 className="text-xl font-medium text-gray-800">
@@ -98,11 +98,11 @@ function Cardchard2() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 max-w-full">
         {/* แถวแรก: การ์ด 1 และ การ์ด 2 */}
-        <div className="md:flex-row flex flex-col gap-4  ">
+        <div className="xl:flex-row lg:flex-row md:flex-col flex flex-col gap-4  ">
           {/* Card 1 */}
-          <div className="bg-white rounded-lg shadow-md p-4 md:w-1/2 lg:w-1/2 xl:w-[172px] w-full h-[256px] flex flex-col justify-between">
+          <div className="bg-white rounded-lg shadow-md p-4 md:w-full lg:w-1/2 xl:w-[172px] w-full h-[256px] flex flex-col justify-between">
             <div className="p-4 flex flex-col gap-3">
               <h3 className="text-md font-semibold text-gray-800">Customers</h3>
               <p className="text-gray-600 text-xl mt-2">36,358</p>
@@ -139,7 +139,7 @@ function Cardchard2() {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-white rounded-lg shadow-md p-4 md:w-1/2 lg:w-[172px] w-full h-[256px] flex flex-col justify-between">
+          <div className="bg-white rounded-lg shadow-md p-4 md:w-full lg:w-[172px] w-full h-[256px] flex flex-col justify-between">
             <div className="p-4 flex flex-col gap-3">
               <h3 className="text-md font-semibold text-gray-800">Projects</h3>
               <p className="text-gray-600 text-xl mt-2">78,298</p>
@@ -219,7 +219,7 @@ function Cardchard2() {
           </div>
         </div>
       </div>
-      <div className=" bg-[#5D87FF] rounded-lg shadow-lg md:w-[740px] lg:w-[368px] w-full h-auto  mx-auto">
+      <div className=" bg-[#5D87FF] rounded-lg shadow-lg md:w-full lg:w-[368px] xl:w-[368px] w-full h-auto  mx-auto">
         <div className="flex p-6 justify-between">
           <div className="text-start mb-4">
             <h2 className="text-xl font-medium text-white">

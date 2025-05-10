@@ -1,5 +1,4 @@
 import Nftcard from "../Components/Nftcard";
-import React, { useEffect, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -49,7 +48,7 @@ function Nft() {
 
   return (
     <div className="flex xl:flex-row  flex-col justify-center w-full max-w-7xl items-center gap-6">
-      <div className="p-8 bg-white rounded-2xl shadow-xl xl:w-[800px] lg:w-full w-full  h-[460px]  mx-auto">
+      <div className="p-8 bg-white rounded-2xl shadow-xl xl:w-[768px] lg:w-[768px]  w-full  h-[460px]  mx-auto">
         <div className="flex flex-col gap-6">
           {/* Header */}
           <div className="text-start">
@@ -96,7 +95,7 @@ function Nft() {
         </div>
       </div>
 
-      <div className="border bg-white rounded-2xl shadow-xl xl:w-[400px] lg:w-full  w-full h-[460px] ">
+      <div className="border bg-white rounded-2xl shadow-xl xl:w-full lg:w-full  w-full h-[460px] ">
         <div className="flex flex-col gap-6">
           {/* Header */}
           <div className="text-start p-6">

@@ -9,38 +9,37 @@ import {
   TableOutlined,
   MenuOutlined,
 } from "@ant-design/icons";
-import { Button, Layout, Menu, Drawer } from "antd";
+import { Button, Layout, Menu, Drawer } from "antd";  // ลบ SubMenu ที่ไม่ใช้งาน
 import { useNavigate } from "react-router-dom";
-import App from "../App";
+import type { NavigateFunction } from "react-router-dom"; // ใช้ type-only import
 import Profile from "./Componentnavbar/Profile";
 import Bell from "./Componentnavbar/Bell";
 import Cart from "./Componentnavbar/Cart";
 import Langue from "./Componentnavbar/Langue";
 import Darkmode from "./Componentnavbar/Darkmode";
-
+import type { MenuProps } from "antd/es/menu";
 const { Header, Sider, Content } = Layout;
 
 const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // ใช้ props.children
   const [collapsed, setCollapsed] = useState(false);
   const [drawerVisible, setDrawerVisible] = useState(false);
-  const navigate = useNavigate();
+  const navigate: NavigateFunction = useNavigate();
 
   const toggleMenu = () => {
-    setCollapsed(!collapsed); // toggle collapsed state
+    setCollapsed(!collapsed);
   };
 
   const toggleDrawer = () => {
-    setDrawerVisible(!drawerVisible); // toggle Drawer visibility
+    setDrawerVisible(!drawerVisible);
   };
 
   const handleMenuClick = () => {
-    setDrawerVisible(false); // เมื่อเลือกเมนูให้ปิด Drawer
+    setDrawerVisible(false);
   };
 
-  const menuItems = (navigate) => [
+  const menuItems = (navigate: NavigateFunction): MenuProps["items"] => [
     {
-      type: "group",
+      type: "group",  // ใช้ 'group' เป็น type
       label: (
         <span
           className={`flex ${
@@ -130,7 +129,7 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         style={{
           background: "#FFFFFF",
           boxShadow: "2px 0px 8px rgba(0, 0, 0, 0.1)",
-          overflow: "auto", // เพิ่ม scroll ถ้าเมนูยาวเกิน
+          overflow: "auto",
         }}
         className="hidden lg:block"
       >
@@ -153,20 +152,12 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           theme="light"
           mode="inline"
           defaultSelectedKeys={["modern"]}
-          items={menuItems(navigate)}
+          items={menuItems(navigate)} // ส่ง navigate มาให้
           style={{ marginTop: 24 }}
         />
       </Sider>
 
-      {/* Layout ด้านขวา */}
-      <Layout
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          flex: 1,
-          overflow: "hidden",
-        }}
-      >
+      <Layout style={{ display: "flex", flexDirection: "column", flex: 1 }}>
         <Header
           style={{
             padding: 12,
@@ -223,7 +214,7 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           className="bg-white p-3 md:p-8 flex justify-center"
           style={{
             flex: 1,
-            overflow: "auto", // ✅ สำคัญ: ทำให้เลื่อน scroll ได้
+            overflow: "auto",
           }}
         >
           {children}
@@ -241,7 +232,7 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           theme="light"
           mode="inline"
           defaultSelectedKeys={["modern"]}
-          items={menuItems(navigate)}
+          items={menuItems(navigate)} // ส่ง navigate มาให้
         />
       </Drawer>
     </Layout>

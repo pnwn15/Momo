@@ -63,7 +63,7 @@ function Cardchard() {
   };
 
   return (
-    <div className="lg:flex-row md:flex-col flex py-3 flex-col overflow-auto gap-6">
+    <div className="lg:flex-col xl:flex-row md:flex-col container mx-auto flex py-3 flex-col overflow-auto gap-6">
     <div className="p-6  bg-white rounded-lg shadow-lg w-full h-auto lg:max-w-3xl max-w-full mx-auto">
       <div className="flex justify-between">
         <div className="text-start mb-4">
