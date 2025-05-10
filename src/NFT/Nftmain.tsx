@@ -3,7 +3,7 @@ import Nft from "./Nft";
 
 function Nftmain() {
   return (
-    <div className="max-w-screen-xl mx-auto">
+    <div className="max-w-screen-xl mx-auto container">
       <div className="my-8 flex items-center">
         <div className="w-full flex flex-col">
           {/* Left Column */}
@@ -14,7 +14,7 @@ function Nftmain() {
           </div>
 
           {/* Right Column */}
-          <div className="w-full lg:w-[800px]  p-4">
+          <div className="w-full p-4">
             <div className="mx-2 w-full flex flex-col items-center"><Cardbank /></div>
           </div>
         </div>
