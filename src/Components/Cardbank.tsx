@@ -7,7 +7,6 @@ const options = [
     { name: "EUR", icon: "/euro.svg" },
   ];
 function Cardbank() {
-   const [selectedRange, setSelectedRange] = useState("Monthly");
      const [selected, setSelected] = useState(options[0]);
    
      const productData = [
