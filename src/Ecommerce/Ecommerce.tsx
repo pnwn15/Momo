@@ -90,7 +90,7 @@ const DashboardCard = () => {
   };
 
   return (
-    <div className="flex flex-col w-full gap-10">
+    <div className="flex flex-col w-full gap-10 pl-20">
       {/* กล่องหลักและกราฟวงกลม/แท่ง */}
       <div className="max-w-6xl flex-[3] flex flex-col md:flex-row flex-nowrap justify-start items-start gap-6">
         {/* การ์ดหลัก */}
