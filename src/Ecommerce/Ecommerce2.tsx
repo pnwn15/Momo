@@ -27,14 +27,13 @@ ChartJS.register(
   Filler
 );
 
-// SalesCard Component
 const SalesCard = () => {
   const miniBarData = {
     labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
     datasets: [
       {
         data: [4, 5, 3, 6, 5, 4, 6],
-        backgroundColor: "#5A55FF",
+        backgroundColor: "#4A90E2",
         borderRadius: 4,
         barThickness: 10,
       },
@@ -54,36 +53,35 @@ const SalesCard = () => {
     },
   };
 
-  return (
-    <div className="rounded-2xl shadow-md p-4 bg-white w-60">
-      <div className="p-2 bg-indigo-100 rounded-full inline-block mb-3">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 text-indigo-600"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.5 7h13L17 13M9 21a1 1 0 100-2 1 1 0 000 2zm6 0a1 1 0 100-2 1 1 0 000 2z"
-          />
-        </svg>
-      </div>
-      <div className="w-full h-[32px]">
-        <Bar data={miniBarData} options={miniBarOptions} />
-      </div>
-      <h4 className="text-xl font-semibold mt-2">
-        $16.5k <span className="text-green-500 text-sm">↑</span>
-      </h4>
-      <p className="text-sm text-gray-500">Sales</p>
+return (
+  <div className="rounded-xl shadow-md p-3 bg-white w-44">
+    <div className="p-1.5 bg-indigo-100 rounded-full inline-block mb-2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-5 w-5 text-indigo-600"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.5 7h13L17 13M9 21a1 1 0 100-2 1 1 0 000 2zm6 0a1 1 0 100-2 1 1 0 000 2z"
+        />
+      </svg>
     </div>
-  );
+    <div className="w-full h-[100px]">
+      <Bar data={miniBarData} options={miniBarOptions} />
+    </div>
+    <h4 className="text-base font-semibold mt-1">
+      $16.5k <span className="text-green-500 text-xs">↑</span>
+    </h4>
+    <p className="text-xs text-gray-500">Sales</p>
+  </div>
+);
 };
 
-// GrowthCard Component
 const GrowthCard = () => {
   const lineData = {
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
@@ -92,8 +90,52 @@ const GrowthCard = () => {
         label: "Growth",
         data: [12, 15, 18, 20, 22, 24],
         fill: true,
-        backgroundColor: "rgba(90, 85, 255, 0.1)",
-        borderColor: "#5A55FF",
+        backgroundColor: "rgba(179, 212, 252, 0.2)",
+        borderColor: "#4A90E2",
+        tension: 0.4,
+        pointRadius: 0,
+      },
+    ],
+  };
+
+  const lineOptions: ChartOptions<"line"> = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { enabled: true },
+    },
+    scales: {
+      x: { display: false },
+      y: { display: false },
+    },
+  };
+
+ return (
+    <div className="rounded-xl shadow-md p-3 bg-white w-44">
+      <div className="p-1.5 bg-indigo-100 rounded-full inline-block mb-2">
+        <LineChartOutlined className="text-indigo-600 text-lg" />
+      </div>
+      <div className="w-full h-[100px]">
+        <Line data={lineData} options={lineOptions} />
+      </div>
+      <h4 className="text-base font-semibold mt-1">
+        24% <span className="text-green-500 text-xs">↑</span>
+      </h4>
+      <p className="text-xs text-gray-500">Growth</p>
+    </div>
+  );
+};
+const EarningsCard = () => {
+  const lineData = {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    datasets: [
+      {
+        label: "Earnings",
+        data: [5200, 5400, 5800, 6100, 6550, 6820],
+        fill: true,
+        backgroundColor: "rgba(179, 212, 252, 0.2)",
+        borderColor: "#4A90E2",
         tension: 0.4,
         pointRadius: 0,
       },
@@ -114,25 +156,34 @@ const GrowthCard = () => {
   };
 
   return (
-    <div className="rounded-2xl shadow-md p-4 bg-white w-60">
-
-    <div className="p-2 bg-indigo-100 rounded-full inline-block mb-3">
-      <LineChartOutlined className="text-indigo-600 text-xl" />
+    <div className="rounded-2xl shadow-md p-4 bg-white w-[350px]">
+      <div className="p-2 bg-indigo-100 rounded-full inline-block mb-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6 text-indigo-600"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M12 8c-1.657 0-3 1.567-3 3.5S10.343 15 12 15s3-1.567 3-3.5S13.657 8 12 8z"
+          />
+        </svg>
+      </div>
+      <div className="w-[300px] h-[120px]">
+        <Line data={lineData} options={lineOptions} />
+      </div>
+      <h4 className="text-xl font-semibold mt-2">
+        $6,820 <span className="text-green-500 text-sm">+9%</span>
+      </h4>
+      <p className="text-sm text-gray-500">Monthly Earnings</p>
     </div>
-     <div className="w-full h-[40px]">
-      <Line data={lineData} options={lineOptions} />
-    </div>
-    
-   <h4 className="text-xl font-semibold mt-2">
-  24% <span className="text-green-500 text-sm">↑</span>
-</h4>
-<p className="text-sm text-gray-500">Growth</p>
-    
-  </div>
-);
+  );
 };
 
-// Main Page
 const Ecommerce2 = () => {
   const barData = {
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
@@ -147,7 +198,7 @@ const Ecommerce2 = () => {
       {
         label: "Fashionware",
         data: [800, 501, 900, 630, 400, 605],
-        backgroundColor: "#F5A623",
+        backgroundColor: "#B3D4FC",
         borderRadius: 6,
         barThickness: 18,
       },
@@ -186,7 +237,7 @@ const Ecommerce2 = () => {
     datasets: [
       {
         data: [23450, 23450],
-        backgroundColor: ["#4A90E2", "#F5A623"],
+        backgroundColor: ["#4A90E2", "#B3D4FC"],
         hoverOffset: 6,
         borderWidth: 0,
       },
@@ -205,8 +256,7 @@ const Ecommerce2 = () => {
 
   return (
     <div className="flex flex-row gap-6 mt-6 mb-8 w-full h-full ">
-      {/* Bar Chart Box */}
-      <div className="bg-white w-[300px] h-[460px] rounded-md shadow-xl p-6 flex flex-col">
+      <div className="bg-white w-[350px] h-[450px] rounded-md shadow-xl p-6 flex flex-col">
         <h3 className="text-lg font-bold text-black mb-1">Revenue Updates</h3>
         <p className="text-sm text-gray-500 mb-2">Overview of Profit</p>
         <div className="flex-1 w-full">
@@ -214,13 +264,12 @@ const Ecommerce2 = () => {
         </div>
       </div>
 
-      {/* Doughnut Chart Box */}
-      <div className="bg-white w-[300px] h-[460px] rounded-md shadow-xl p-6 flex flex-col items-center gap-6">
+      <div className="bg-white w-[400px] h-[450px] rounded-md shadow-xl p-6 flex flex-col items-center gap-6">
         <h3 className="text-lg font-bold text-black mb-1 text-center">
           Sales Overview
         </h3>
         <p className="text-sm text-gray-500 mb-4 text-center">Every Month</p>
-        <div className="w-[200px] h-[200px]">
+        <div className="w-full h-[240px] flex justify-center items-center">
           <Doughnut data={doughnutData} options={doughnutOptions} />
         </div>
         <div className="flex justify-around w-full mt-4">
@@ -230,21 +279,23 @@ const Ecommerce2 = () => {
           </div>
           <div className="flex flex-col items-center">
             <p className="text-sm text-gray-500">Expense</p>
-            <h3 className="text-lg font-bold text-[#F5A623]">$23,450</h3>
+            <h3 className="text-lg font-bold text-[#B3D4FC]">$23,450</h3>
           </div>
         </div>
       </div>
 
-      {/* Sales + Growth Cards */}
-      <div className="flex gap-6">
-        <div className="hover:scale-105 transition-transform duration-300">
-          <SalesCard />
-        </div>
-        <div className="hover:scale-105 transition-transform duration-300">
-          <GrowthCard />
-        </div>
+<div>
+  <div className="flex space-x-4">
+    <SalesCard />
+    <GrowthCard />
+  </div>
+
+  <div className="mt-10 hover:scale-105 transition-transform duration-300">
+    <EarningsCard />
+  </div>
+</div>
       </div>
-    </div>
+    
   );
 };
 
