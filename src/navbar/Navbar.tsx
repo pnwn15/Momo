@@ -109,9 +109,9 @@ const Navbar: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         {
           key: "frontend",
           icon: <TableOutlined />,
-          label: <span className="menu-label-home">Frontend Page</span>,
+          label: <span className="menu-label-home">SmartCom Silo</span>,
           onClick: () => {
-            navigate("/frontend");
+            navigate("/Silo");
             handleMenuClick();
           },
         },

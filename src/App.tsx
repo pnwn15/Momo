@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Nftmain from "./NFT/Nftmain";
+import CardSilo from "./Silo/CardSilo";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,6 +28,7 @@ function App() {
       <Route path="/" element={<Modern />} />
       <Route path="/ecommerce" element={<EcommerceDashboard />} />
       <Route path="/nft" element={<Nftmain />} />
+      <Route path="/Silo" element={<CardSilo id={""} range={""} percent={50} />} />
       
     </Routes>
   );
