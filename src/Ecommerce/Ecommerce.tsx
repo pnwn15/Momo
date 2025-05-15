@@ -90,7 +90,7 @@ const DashboardCard = () => {
   };
 
   return (
-    <div className="flex flex-col w-full gap-10">
+    <div className="flex flex-col w-full gap-10 pl-15">
       {/* กล่องหลักและกราฟวงกลม/แท่ง */}
       <div className="max-w-6xl flex-[3] flex flex-col md:flex-row flex-nowrap justify-start items-start gap-6">
         {/* การ์ดหลัก */}
@@ -161,7 +161,7 @@ const DashboardCard = () => {
         </div>
 
         {/* กล่องที่สอง */}
-        <div className="flex flex-col bg-white w-full md:w-[166px] h-[250px] rounded-md shadow-xl p-4 items-center justify-center">
+        <div className="flex flex-col bg-white w-full  md:w-[166px] h-[250px] rounded-md shadow-xl p-4 items-center justify-center">
           <h3 className="text-lg font-bold text-black">$10,230</h3>
           <p className="text-gray-500 text-sm mb-2">Expense</p>
           <div className="w-[100px] h-[100px]">
