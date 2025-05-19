@@ -11,6 +11,9 @@ import {
 } from "chart.js";
 import Ecommerce2 from "./Ecommerce2";
 
+import Recharts from "./Recharts";
+import RecentTransactions from "./RecentTransactions";
+
 ChartJS.register(
   ArcElement,
   Tooltip,
@@ -180,6 +183,8 @@ const DashboardCard = () => {
       </div>
          
     <Ecommerce2/>
+    <Recharts/>
+    <RecentTransactions/>
     </div>
   );
 };
